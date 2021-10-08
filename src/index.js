@@ -4,14 +4,16 @@ const cors = require('cors');
 require('dotenv/config');
 
 const app = express();
+const router = require('./routes');
 
 app.use(express.json());
+app.use('api',router);
 
 //Cors
 app.use(cors());
 
 //Uso del metodo de conexion de Mongoose
-mongoose.connect('mongodb+srv://JERE:jere1234@cluster0.tiwfy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then(()=>{
+mongoose.connect('mongodb+srv://JERE:JERE1234@cluster0.tiwfy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then(()=>{
     console.log('Base de datos conectado')
 })
 .catch((error)=>{
