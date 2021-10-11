@@ -4,5 +4,6 @@ const controller = require('../../controllers/clients') // controller es control
 const router = express.Router();
 
 router.route('/').get(controller.getClients); 
+router.route('/').post(controller.addClient); 
 
 module.exports = router;

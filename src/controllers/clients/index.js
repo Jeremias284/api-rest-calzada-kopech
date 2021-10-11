@@ -15,6 +15,26 @@ const getClients = async (req, res) => {
     }
 };
 
+const addClient = async (req, res) => {
+    try {
+        const client = new ClientSchema(req.body);  
+        const newClient = await client.save();
+
+        return res.status(200).json({
+            data: newClient,
+            error: false 
+        })
+
+    } catch (error) {
+        return res.status(400).json({
+            error: true,
+            message: error
+        });
+        
+    }
+};
+
 module.exports = {
-    getClients
+    getClients,
+    addClient
 }
