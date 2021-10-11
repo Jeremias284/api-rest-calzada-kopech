@@ -6,7 +6,7 @@ const router = express.Router();
 //OBTIENE TODOS LOS CLIENTES
 router.route('/').get(controller.getClients); 
 //OBTIENE EL CLIENTE CON EL ID INDICADO
-router.route('/').get(controller.getClientById);
+router.route('/:clientId').get(controller.getClientById);
 
 //AGREGA CLIENTE
 router.route('/').post(controller.addClient); 
